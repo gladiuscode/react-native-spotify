@@ -1,6 +1,8 @@
 import React from "react";
-import {View, Text} from "react-native";
+import {View} from "react-native";
 import AppScreen from "../../../../../core/navigation/app-screen.enum";
+import AppText from "../../../../../components/app-typography/app-text.component";
+import appTheme from "../../../../../core/theme/app-theme";
 
 function InitialScreen() {
   return (
