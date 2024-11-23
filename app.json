@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.react-native-spotify"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,6 +24,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./node_modules/@expo-google-fonts/roboto/Roboto_400Regular.ttf",
+            "./node_modules/@expo-google-fonts/roboto/Roboto_500Medium.ttf",
+            "./node_modules/@expo-google-fonts/roboto/Roboto_700Bold.ttf"
+          ]
+        }
+      ]
+    ]
   }
 }
