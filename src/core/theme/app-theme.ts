@@ -56,6 +56,18 @@ const AppTheme = {
         color: colors.white,
       },
     })
+  },
+  spacings: {
+    four: 4,
+    eight: 8,
+    twelve: 12,
+    sixteen: 16,
+    twenty: 20,
+    twentyFour: 24,
+    twentyEight: 28,
+    thirtyTwo: 32,
+    thirtySix: 36,
+    forty: 40,
   }
 };
 
