@@ -26,13 +26,16 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      ["expo-font", {
-        "fonts": [
-          "assets/fonts/Roboto-Regular.ttf",
-          "assets/fonts/Roboto-Medium.ttf",
-          "assets/fonts/Roboto-Bold.ttf"
-        ]
-      }]
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./node_modules/@expo-google-fonts/roboto/Roboto_400Regular.ttf",
+            "./node_modules/@expo-google-fonts/roboto/Roboto_500Medium.ttf",
+            "./node_modules/@expo-google-fonts/roboto/Roboto_700Bold.ttf"
+          ]
+        }
+      ]
     ]
   }
 }
