@@ -2,10 +2,12 @@ import {Platform, StyleSheet} from "react-native";
 
 const colors = {
   white: '#FFFFFF',
+  lightGrey: '#cbcbcb',
   grey: '#777777',
   darkGrey: '#282828',
   black: '#121212',
   green: '#1ED760',
+  red: '#c72e2e',
 }
 
 const fontFamilies = {
