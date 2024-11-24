@@ -5,6 +5,7 @@ import HomeI18n from '@/features/home/i18n/home-i18n';
 import languageDetector from '@/core/i18n/language-detector/language-detector';
 
 import commonEn from '@/core/i18n/translations/common.json';
+import AppI18nDefaults from '@/core/i18n/defaults';
 
 const resources = {
   en: {
@@ -18,6 +19,8 @@ i18n
   .use(initReactI18next)
   .use(languageDetector)
   .init({
+    defaultNS: AppI18nDefaults.ns,
+    ns: ['common', 'auth', 'home'],
     resources,
     interpolation: {
       escapeValue: false,
