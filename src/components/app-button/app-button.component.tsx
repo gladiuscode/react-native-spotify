@@ -14,9 +14,9 @@ type FilledProps = {
 function Filled({ style, color = 'white', text, ...otherProps }: FilledProps) {
   return (
     <Container style={[style, { backgroundColor: color }]} {...otherProps}>
-      <AppText.Text style={styles.text} color={'black'}>
+      <AppText.H2 style={styles.text} color={'black'}>
         {text}
-      </AppText.Text>
+      </AppText.H2>
     </Container>
   );
 }
