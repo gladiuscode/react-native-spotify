@@ -1,21 +1,19 @@
 import {
-  StyleProp,
   StyleSheet,
   TouchableOpacity,
-  ViewStyle,
+  TouchableOpacityProps,
 } from 'react-native';
-import { PropsWithChildren, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import appTheme from '@/core/theme/app-theme';
 import AppText from '../app-typography/app-text.component';
 
 type FilledProps = {
-  style?: StyleProp<ViewStyle>;
   color?: keyof typeof appTheme.colors;
   text: string | ReactNode;
-};
-function Filled({ style, color = 'white', text }: FilledProps) {
+} & TouchableOpacityProps;
+function Filled({ style, color = 'white', text, ...otherProps }: FilledProps) {
   return (
-    <Container style={[style, { backgroundColor: color }]}>
+    <Container style={[style, { backgroundColor: color }]} {...otherProps}>
       <AppText.Text style={styles.text} color={'black'}>
         {text}
       </AppText.Text>
@@ -24,9 +22,8 @@ function Filled({ style, color = 'white', text }: FilledProps) {
 }
 
 type OutlinedProps = {
-  style?: StyleProp<ViewStyle>;
   text: string | ReactNode;
-};
+} & TouchableOpacityProps;
 function Outlined({ style, text }: OutlinedProps) {
   return (
     <Container style={[styles.outlinedContainer, style]}>
@@ -44,12 +41,9 @@ const AppButton = {
 
 export default AppButton;
 
-function Container({
-  style,
-  children,
-}: PropsWithChildren<{ style?: StyleProp<ViewStyle> }>) {
+function Container({ style, children, ...otherProps }: TouchableOpacityProps) {
   return (
-    <TouchableOpacity style={[styles.container, style]}>
+    <TouchableOpacity style={[styles.container, style]} {...otherProps}>
       {children}
     </TouchableOpacity>
   );
