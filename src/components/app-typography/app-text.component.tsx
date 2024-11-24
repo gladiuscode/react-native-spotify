@@ -1,5 +1,5 @@
-import React, {PropsWithChildren} from "react";
-import {StyleProp, Text, TextStyle} from "react-native";
+import React from "react";
+import {Text, TextProps} from "react-native";
 import appTheme from "../../core/theme/app-theme";
 
 const AppText = buildAppText();
@@ -15,11 +15,11 @@ function buildAppText() {
 }
 
 function createVariantFor(type: keyof ThemeFontStyles) {
-
-  return (props: Props) => {
+  return ({ style, color, children, ...otherProps}: Props) => {
+    const colorStyle = color ? { color: appTheme.colors[color] } : undefined;
     return (
-      <Text style={[appTheme.font.styles[type], {color: props.color ?? appTheme.font.styles[type].color}, props.style]}>
-        {props.children}
+      <Text style={[appTheme.font.styles[type], colorStyle, style]} {...otherProps}>
+        {children}
       </Text>
     )
   }
@@ -31,10 +31,9 @@ type AppTextType = {
 
 type ThemeFontStyles = typeof appTheme.font.styles;
 
-type Props = PropsWithChildren<{
-  style?: StyleProp<TextStyle>;
+type Props = TextProps & {
   color?: keyof typeof appTheme.colors;
-}>;
+};
 
 export default AppText;
 
