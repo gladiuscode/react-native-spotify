@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from "react-native";
+import { Platform, StyleSheet } from 'react-native';
 
 const colors = {
   white: '#FFFFFF',
@@ -8,7 +8,7 @@ const colors = {
   black: '#121212',
   green: '#1ED760',
   red: '#c72e2e',
-}
+};
 
 const fontFamilies = {
   roboto: {
@@ -24,8 +24,8 @@ const fontFamilies = {
       android: 'Roboto_700Bold',
       ios: 'Roboto-Bold',
     }),
-  }
-}
+  },
+};
 
 const AppTheme = {
   colors,
@@ -57,7 +57,7 @@ const AppTheme = {
         fontSize: 8,
         color: colors.white,
       },
-    })
+    }),
   },
   spacings: {
     four: 4,
@@ -70,7 +70,7 @@ const AppTheme = {
     thirtyTwo: 32,
     thirtySix: 36,
     forty: 40,
-  }
+  },
 };
 
 export default AppTheme;
