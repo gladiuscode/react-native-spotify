@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-import './config.ts';
+import './init.ts';
 
 function AppI18n({ children }: PropsWithChildren) {
   return children;
