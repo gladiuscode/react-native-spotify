@@ -18,7 +18,7 @@ function createVariantFor(type: keyof ThemeFontStyles) {
 
   return (props: Props) => {
     return (
-      <Text style={[appTheme.font.styles[type], props.style]}>
+      <Text style={[appTheme.font.styles[type], {color: props.color ?? appTheme.font.styles[type].color}, props.style]}>
         {props.children}
       </Text>
     )
@@ -33,6 +33,7 @@ type ThemeFontStyles = typeof appTheme.font.styles;
 
 type Props = PropsWithChildren<{
   style?: StyleProp<TextStyle>;
+  color?: keyof typeof appTheme.colors;
 }>;
 
 export default AppText;
