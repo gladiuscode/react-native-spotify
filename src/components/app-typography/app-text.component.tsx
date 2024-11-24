@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TextProps } from 'react-native';
-import appTheme from '../../core/theme/app-theme';
+import appTheme from '@/core/theme/app-theme';
 
 const AppText = buildAppText();
 

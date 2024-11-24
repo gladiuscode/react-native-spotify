@@ -12,9 +12,9 @@ import React, {
   useCallback,
   useState,
 } from 'react';
-import appTheme from '../../core/theme/app-theme';
+import appTheme from '@/core/theme/app-theme';
 import Feather from '@expo/vector-icons/Feather';
-import buildContext from '../../utils/buildContext.util';
+import buildContext from '@/utils/buildContext.util';
 
 type SimpleProps = {
   style?: StyleProp<ViewStyle>;

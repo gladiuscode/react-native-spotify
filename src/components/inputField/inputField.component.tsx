@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import React, { ReactNode, useCallback, useState } from 'react';
-import appTheme from '../../core/theme/app-theme';
+import appTheme from '@/core/theme/app-theme';
 import Feather from '@expo/vector-icons/Feather';
 import AppText from '../app-typography/app-text.component';
 

@@ -1,5 +1,5 @@
 import { StyleSheet, View, ViewProps } from 'react-native';
-import appTheme from '../../core/theme/app-theme';
+import appTheme from '@/core/theme/app-theme';
 
 type Props = Omit<ViewProps, 'style'> & {
   height?: number;
