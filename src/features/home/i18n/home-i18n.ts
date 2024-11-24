@@ -1,5 +1,7 @@
+import en from './translations/en.json';
+
 const HomeI18n = {
-  en: require('./translations/en.json'),
+  en,
 };
 
 export default HomeI18n;
