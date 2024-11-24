@@ -5,7 +5,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import { PropsWithChildren, ReactNode } from 'react';
-import appTheme from '../../core/theme/app-theme';
+import appTheme from '@/core/theme/app-theme';
 import AppText from '../app-typography/app-text.component';
 
 type FilledProps = {
