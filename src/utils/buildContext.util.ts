@@ -1,4 +1,4 @@
-import {createContext, useContext} from 'react';
+import { createContext, useContext } from 'react';
 
 const buildContext = <T>(name: string) => {
   const Context = createContext<T | undefined>(undefined);

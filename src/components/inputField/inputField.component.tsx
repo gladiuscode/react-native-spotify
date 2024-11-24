@@ -1,8 +1,15 @@
-import {StyleProp, StyleSheet, TextInput, TextInputProps, View, ViewStyle} from "react-native";
-import React, {ReactNode, useCallback, useState} from "react";
-import appTheme from "../../core/theme/app-theme";
-import Feather from "@expo/vector-icons/Feather";
-import AppText from "../app-typography/app-text.component";
+import {
+  StyleProp,
+  StyleSheet,
+  TextInput,
+  TextInputProps,
+  View,
+  ViewStyle,
+} from 'react-native';
+import React, { ReactNode, useCallback, useState } from 'react';
+import appTheme from '../../core/theme/app-theme';
+import Feather from '@expo/vector-icons/Feather';
+import AppText from '../app-typography/app-text.component';
 
 type Props = Omit<TextInputProps, 'defaultValue' | 'style'> & {
   containerStyle?: StyleProp<ViewStyle>;
@@ -13,7 +20,15 @@ type Props = Omit<TextInputProps, 'defaultValue' | 'style'> & {
   errored?: boolean;
 };
 
-function InputField({initialValue, label, tip, containerStyle, icon, errored = false, ...otherProps}: Props) {
+function InputField({
+  initialValue,
+  label,
+  tip,
+  containerStyle,
+  icon,
+  errored = false,
+  ...otherProps
+}: Props) {
   const [focused, setFocused] = useState(false);
 
   const handleOnFocus = useCallback(() => setFocused(true), []);
@@ -23,16 +38,36 @@ function InputField({initialValue, label, tip, containerStyle, icon, errored = f
     <View style={containerStyle}>
       {typeof label === 'string' ? <AppText.H1>{label}</AppText.H1> : label}
       <View
-        style={[styles.container, focused ? styles.containerFocused : undefined, errored ? styles.containerErrored : undefined]}>
-        <TextInput style={[styles.input, errored ? styles.inputErrored : undefined]}
-                   selectionColor={appTheme.colors.green}
-                   defaultValue={initialValue}
-                   onFocus={handleOnFocus}
-                   onBlur={handleOnBlur} {...otherProps} />
-        {typeof icon === 'string' ?
-          <Feather name={icon as IconName} size={20} color={appTheme.colors.white} style={styles.icon}/> : icon}
+        style={[
+          styles.container,
+          focused ? styles.containerFocused : undefined,
+          errored ? styles.containerErrored : undefined,
+        ]}
+      >
+        <TextInput
+          style={[styles.input, errored ? styles.inputErrored : undefined]}
+          selectionColor={appTheme.colors.green}
+          defaultValue={initialValue}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
+          {...otherProps}
+        />
+        {typeof icon === 'string' ? (
+          <Feather
+            name={icon as IconName}
+            size={20}
+            color={appTheme.colors.white}
+            style={styles.icon}
+          />
+        ) : (
+          icon
+        )}
       </View>
-      {typeof tip === 'string' ? <AppText.Small style={styles.tip}>{tip}</AppText.Small> : tip}
+      {typeof tip === 'string' ? (
+        <AppText.Small style={styles.tip}>{tip}</AppText.Small>
+      ) : (
+        tip
+      )}
     </View>
   );
 }
