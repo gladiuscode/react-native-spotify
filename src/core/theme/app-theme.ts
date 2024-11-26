@@ -1,5 +1,7 @@
 import { Platform, StyleSheet } from 'react-native';
 
+// TODO: ADD THEME PROVIDER FOR DARK THEME AND INSETS
+
 const colors = {
   white: '#FFFFFF',
   lightGrey: '#cbcbcb',
