@@ -16,6 +16,7 @@ const theme: Theme = {
   },
 };
 
+// TODO: ADD NAVIGATION DEVTOOLS
 function AppNavigator() {
   return <MainNavigator theme={theme} />;
 }
