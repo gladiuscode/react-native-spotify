@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AppScreen from '@/core/navigation/app-screen.enum';
-import useAppTranslation from '@/core/i18n/use-app-translation';
 import AppText from '@/components/app-typography/app-text.component';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import appTheme from '@/core/theme/app-theme';
 import AppButton from '@/components/app-button/app-button.component';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import useInitialScreenFacade from '@/features/auth/ui/screens/initial/useInitialScreen.facade';
 
 function InitialScreen() {
-  const safeAreaInsets = useSafeAreaInsets();
-  const { t } = useAppTranslation('auth');
+  const { t, safeAreaInsets, handleSignUp, handleSocialSignUp, handleLogin } =
+    useInitialScreenFacade();
 
   return (
     <View style={[{ ...safeAreaInsets }, styles.container]}>
@@ -22,24 +21,24 @@ function InitialScreen() {
         style={styles.signUpButton}
         text={t('btn-sign-up')}
         color={'green'}
-        onPress={console.log}
+        onPress={handleSignUp}
       />
       <AppButton.Outlined
         style={styles.signUpButton}
         text={t('btn-google-sign-up')}
-        onPress={console.log}
+        onPress={handleSocialSignUp('google')}
       />
       <AppButton.Outlined
         style={styles.signUpButton}
         text={t('btn-facebook-sign-up')}
-        onPress={console.log}
+        onPress={handleSocialSignUp('facebook')}
       />
       <AppButton.Outlined
         style={styles.signUpButton}
         text={t('btn-apple-sign-up')}
-        onPress={console.log}
+        onPress={handleSocialSignUp('apple')}
       />
-      <AppText.H2 style={styles.logInButton} onPress={console.log}>
+      <AppText.H2 style={styles.logInButton} onPress={handleLogin}>
         {t('btn-log-in')}
       </AppText.H2>
     </View>
