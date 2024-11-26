@@ -10,6 +10,7 @@ import AppText from '../app-typography/app-text.component';
 type FilledProps = {
   color?: keyof typeof appTheme.colors;
   text: string | ReactNode;
+  disabled?: boolean;
 } & TouchableOpacityProps;
 function Filled({ style, color = 'white', text, ...otherProps }: FilledProps) {
   return (
@@ -23,6 +24,7 @@ function Filled({ style, color = 'white', text, ...otherProps }: FilledProps) {
 
 type OutlinedProps = {
   text: string | ReactNode;
+  disabled?: boolean;
 } & TouchableOpacityProps;
 function Outlined({ style, text, ...otherProps }: OutlinedProps) {
   return (
@@ -41,9 +43,24 @@ const AppButton = {
 
 export default AppButton;
 
-function Container({ style, children, ...otherProps }: TouchableOpacityProps) {
+type ContainerProps = TouchableOpacityProps & {
+  disabled?: boolean;
+};
+function Container({
+  style,
+  children,
+  disabled = false,
+  ...otherProps
+}: ContainerProps) {
   return (
-    <TouchableOpacity style={[styles.container, style]} {...otherProps}>
+    <TouchableOpacity
+      style={[
+        styles.container,
+        style,
+        disabled ? styles.containerDisabled : null,
+      ]}
+      {...otherProps}
+    >
       {children}
     </TouchableOpacity>
   );
@@ -60,5 +77,8 @@ const styles = StyleSheet.create({
   outlinedContainer: {
     borderWidth: 1,
     borderColor: appTheme.colors.grey,
+  },
+  containerDisabled: {
+    backgroundColor: appTheme.colors.darkGrey,
   },
 });
