@@ -1,8 +1,17 @@
 {
-  "title": "Milioni di brani.\nGratis su Spotify.",
-  "btn-sign-up": "Iscriviti gratis",
-  "btn-log-in": "Accedi",
-  "btn-google-sign-up": "Continua con Google",
-  "btn-facebook-sign-up": "Continua con Facebook",
-  "btn-apple-sign-up": "Continua con Apple"
+  "initial-screen": {
+    "title": "Milioni di brani.\nGratis su Spotify.",
+    "btn-sign-up": "Iscriviti gratis",
+    "btn-log-in": "Accedi",
+    "btn-google-sign-up": "Continua con Google",
+    "btn-facebook-sign-up": "Continua con Facebook",
+    "btn-apple-sign-up": "Continua con Apple"
+  },
+  "login-screen": {
+    "title": "Accedi",
+    "input-email-username-label": "Indirizzo e-mail o nome utente",
+    "input-password-label": "Password",
+    "btn-log-in": "Accedi",
+    "btn-log-in-without-password": "Accedi senza password"
+  }
 }

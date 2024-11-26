@@ -16,30 +16,32 @@ function InitialScreen() {
       <View style={styles.logoContainer}>
         <FontAwesome5 name="spotify" size={53} color="white" />
       </View>
-      <AppText.Title style={styles.title}>{t('title')}</AppText.Title>
+      <AppText.Title style={styles.title}>
+        {t('initial-screen.title')}
+      </AppText.Title>
       <AppButton.Filled
         style={styles.signUpButton}
-        text={t('btn-sign-up')}
+        text={t('initial-screen.btn-sign-up')}
         color={'green'}
         onPress={handleSignUp}
       />
       <AppButton.Outlined
         style={styles.signUpButton}
-        text={t('btn-google-sign-up')}
+        text={t('initial-screen.btn-google-sign-up')}
         onPress={handleSocialSignUp('google')}
       />
       <AppButton.Outlined
         style={styles.signUpButton}
-        text={t('btn-facebook-sign-up')}
+        text={t('initial-screen.btn-facebook-sign-up')}
         onPress={handleSocialSignUp('facebook')}
       />
       <AppButton.Outlined
         style={styles.signUpButton}
-        text={t('btn-apple-sign-up')}
+        text={t('initial-screen.btn-apple-sign-up')}
         onPress={handleSocialSignUp('apple')}
       />
       <AppText.H2 style={styles.logInButton} onPress={handleLogin}>
-        {t('btn-log-in')}
+        {t('initial-screen.btn-log-in')}
       </AppText.H2>
     </View>
   );

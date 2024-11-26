@@ -1,8 +1,17 @@
 {
-  "title": "Millions of Songs.\nFree on Spotify.",
-  "btn-sign-up": "Sign up free",
-  "btn-log-in": "Log in",
-  "btn-google-sign-up": "Sign up with Google",
-  "btn-facebook-sign-up": "Sign up with Facebook",
-  "btn-apple-sign-up": "Sign up with Apple"
+  "initial-screen": {
+    "title": "Millions of Songs.\nFree on Spotify.",
+    "btn-sign-up": "Sign up free",
+    "btn-log-in": "Log in",
+    "btn-google-sign-up": "Sign up with Google",
+    "btn-facebook-sign-up": "Sign up with Facebook",
+    "btn-apple-sign-up": "Sign up with Apple"
+  },
+  "login-screen": {
+    "title": "Log in",
+    "input-email-username-label": "Email or username",
+    "input-password-label": "Password",
+    "btn-log-in": "Log in",
+    "btn-log-in-without-password": "Log in without password",
+  }
 }
