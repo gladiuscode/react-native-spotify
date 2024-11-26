@@ -24,9 +24,9 @@ function Filled({ style, color = 'white', text, ...otherProps }: FilledProps) {
 type OutlinedProps = {
   text: string | ReactNode;
 } & TouchableOpacityProps;
-function Outlined({ style, text }: OutlinedProps) {
+function Outlined({ style, text, ...otherProps }: OutlinedProps) {
   return (
-    <Container style={[styles.outlinedContainer, style]}>
+    <Container style={[styles.outlinedContainer, style]} {...otherProps}>
       <AppText.H2 style={styles.text} color={'white'}>
         {text}
       </AppText.H2>
