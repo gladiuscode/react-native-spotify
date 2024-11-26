@@ -1,3 +1,8 @@
 {
-  "title": "Millions of Songs.\nFree on Spotify."
+  "title": "Millions of Songs.\nFree on Spotify.",
+  "btn-sign-up": "Sign up free",
+  "btn-log-in": "Log in",
+  "btn-google-sign-up": "Sign up with Google",
+  "btn-facebook-sign-up": "Sign up with Facebook",
+  "btn-apple-sign-up": "Sign up with Apple"
 }
