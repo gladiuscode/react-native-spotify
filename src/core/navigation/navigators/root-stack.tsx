@@ -1,7 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StaticParamList } from '@react-navigation/native';
 import InitialScreen from '@/features/auth/ui/screens/initial/initial.screen';
 import HomeScreen from '@/features/home/ui/screen/home/home.screen';
-import { StaticParamList } from '@react-navigation/native';
+import LoginScreen from '@/features/auth/ui/screens/login/login.screen';
 
 const isSignedIn = false;
 
@@ -11,6 +12,13 @@ const RootStack = createNativeStackNavigator({
     [InitialScreen.screenName]: {
       if: () => !isSignedIn,
       screen: InitialScreen,
+      options: {
+        headerShown: false,
+      },
+    },
+    [LoginScreen.screenName]: {
+      if: () => !isSignedIn,
+      screen: LoginScreen,
       options: {
         headerShown: false,
       },
