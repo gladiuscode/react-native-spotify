@@ -25,13 +25,32 @@ function Filled({ style, color = 'white', text, ...otherProps }: FilledProps) {
 type OutlinedProps = {
   text: string | ReactNode;
   disabled?: boolean;
+  type?: 'default' | 'smaller';
 } & TouchableOpacityProps;
-function Outlined({ style, text, ...otherProps }: OutlinedProps) {
+function Outlined({
+  style,
+  text,
+  type = 'default',
+  ...otherProps
+}: OutlinedProps) {
   return (
-    <Container style={[styles.outlinedContainer, style]} {...otherProps}>
-      <AppText.H2 style={styles.text} color={'white'}>
-        {text}
-      </AppText.H2>
+    <Container
+      style={[
+        styles.outlinedContainer,
+        type === 'smaller' ? styles.containerSmaller : undefined,
+        style,
+      ]}
+      {...otherProps}
+    >
+      {type === 'default' ? (
+        <AppText.H2 style={styles.text} color={'white'}>
+          {text}
+        </AppText.H2>
+      ) : (
+        <AppText.H3 style={styles.text} color={'white'}>
+          {text}
+        </AppText.H3>
+      )}
     </Container>
   );
 }
@@ -80,5 +99,8 @@ const styles = StyleSheet.create({
   },
   containerDisabled: {
     backgroundColor: appTheme.colors.darkGrey,
+  },
+  containerSmaller: {
+    padding: appTheme.spacings.eight,
   },
 });

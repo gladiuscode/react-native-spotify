@@ -49,6 +49,11 @@ const AppTheme = {
         fontSize: 16,
         color: colors.white,
       },
+      h3: {
+        fontFamily: fontFamilies.roboto.bold,
+        fontSize: 13,
+        color: colors.white,
+      },
       text: {
         fontFamily: fontFamilies.roboto.medium,
         fontSize: 10,
