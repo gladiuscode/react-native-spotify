@@ -78,6 +78,7 @@ function Container({
         style,
         disabled ? styles.containerDisabled : null,
       ]}
+      disabled={disabled}
       {...otherProps}
     >
       {children}
