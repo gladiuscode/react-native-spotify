@@ -21,11 +21,16 @@ function LoginScreen() {
         containerStyle={styles.inputPassword}
         label={t('login-screen.input-password-label')}
       />
-      <AppButton.Filled
-        style={styles.btnLogIn}
-        text={t('login-screen.btn-log-in')}
-      />
-      <AppButton.Outlined text={t('login-screen.btn-log-in')} />
+      <View style={styles.btnContainer}>
+        <AppButton.Filled
+          style={styles.btnLogIn}
+          text={t('login-screen.btn-log-in')}
+        />
+        <AppButton.Outlined
+          text={t('login-screen.btn-log-in-without-password')}
+          type={'smaller'}
+        />
+      </View>
     </View>
   );
 }
@@ -47,7 +52,11 @@ const styles = StyleSheet.create({
   inputPassword: {
     marginBottom: appTheme.spacings.forty,
   },
+  btnContainer: {
+    alignItems: 'center',
+  },
   btnLogIn: {
+    paddingHorizontal: appTheme.spacings.twenty,
     marginBottom: appTheme.spacings.eight,
   },
 });
