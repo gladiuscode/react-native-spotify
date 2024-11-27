@@ -8,7 +8,14 @@ import InputField from '@/components/inputField/inputField.component';
 import AppButton from '@/components/app-button/app-button.component';
 
 function LoginScreen() {
-  const { t, safeAreaInsets } = useLoginScreenFacade();
+  const {
+    t,
+    safeAreaInsets,
+    isLoginDisabled,
+    handleLogin,
+    setUsername,
+    setPassword,
+  } = useLoginScreenFacade();
 
   return (
     <View style={[{ ...safeAreaInsets }, styles.container]}>
@@ -16,15 +23,19 @@ function LoginScreen() {
       <InputField
         containerStyle={styles.inputEmail}
         label={t('login-screen.input-email-username-label')}
+        onChangeText={setUsername}
       />
       <InputField
         containerStyle={styles.inputPassword}
         label={t('login-screen.input-password-label')}
+        onChangeText={setPassword}
       />
       <View style={styles.btnContainer}>
         <AppButton.Filled
           style={styles.btnLogIn}
           text={t('login-screen.btn-log-in')}
+          disabled={isLoginDisabled}
+          onPress={handleLogin}
         />
         <AppButton.Outlined
           text={t('login-screen.btn-log-in-without-password')}
