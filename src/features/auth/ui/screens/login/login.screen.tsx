@@ -12,9 +12,12 @@ function LoginScreen() {
     t,
     safeAreaInsets,
     isLoginDisabled,
-    handleLogin,
+    passwordIcon,
+    showPassword,
     setUsername,
     setPassword,
+    handleLogin,
+    handlePasswordIconPress,
   } = useLoginScreenFacade();
 
   return (
@@ -28,6 +31,9 @@ function LoginScreen() {
       <InputField
         containerStyle={styles.inputPassword}
         label={t('login-screen.input-password-label')}
+        secureTextEntry={!showPassword}
+        icon={passwordIcon}
+        onIconPress={handlePasswordIconPress}
         onChangeText={setPassword}
       />
       <View style={styles.btnContainer}>

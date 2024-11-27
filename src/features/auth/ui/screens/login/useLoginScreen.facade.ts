@@ -8,20 +8,29 @@ const useLoginScreenFacade = () => {
 
   const [username, setUsername] = useState<string>();
   const [password, setPassword] = useState<string>();
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const isLoginDisabled = !username || !password;
+  const passwordIcon = showPassword ? 'eye' : 'eye-off';
 
   const handleLogin = useCallback(() => {
     console.log('Login: username, password', username, password);
   }, [username, password]);
 
+  const handlePasswordIconPress = useCallback(() => {
+    setShowPassword((current) => !current);
+  }, []);
+
   return {
     safeAreaInsets,
     t,
+    showPassword,
     isLoginDisabled,
-    handleLogin,
+    passwordIcon,
     setUsername,
     setPassword,
+    handleLogin,
+    handlePasswordIconPress,
   };
 };
 
