@@ -18,6 +18,7 @@ type Props = Omit<TextInputProps, 'defaultValue' | 'style'> & {
   icon?: IconName | ReactNode;
   tip?: string | ReactNode;
   errored?: boolean;
+  onIconPress?: () => void;
 };
 
 function InputField({
@@ -27,6 +28,7 @@ function InputField({
   containerStyle,
   icon,
   errored = false,
+  onIconPress,
   ...otherProps
 }: Props) {
   const [focused, setFocused] = useState(false);
@@ -58,6 +60,7 @@ function InputField({
             size={20}
             color={appTheme.colors.white}
             style={styles.icon}
+            onPress={onIconPress}
           />
         ) : (
           icon
